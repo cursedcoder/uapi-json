@@ -1,11 +1,13 @@
 language: node_js
+addons:
+ sonarcloud:
+  organization: cursedcoder-github
+  token:
+   secure: 4bb66c995044caf9238b7bc4970d708e6eac9043
 node_js:
  - "8"
 install:
   - npm i -g codecov
   - npm i
 script:
-  - npm run lint
-  - npm run cover
-  - npm run coveralls
-  - codecov
+  - sonar-scanner
