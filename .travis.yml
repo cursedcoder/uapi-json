@@ -10,4 +10,8 @@ install:
   - npm i -g codecov
   - npm i
 script:
+  - npm run lint
+  - npm run cover
+  - npm run coveralls
+  - node node_modules/.bin/eslint -f json -o eslint.report.json .
   - sonar-scanner
